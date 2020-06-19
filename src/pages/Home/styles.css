@@ -1,0 +1,6 @@
+#page-home {
+ display: flex;
+ flex-direction: column;
+ flex: 1 1 0%;
+ width: 100%;
+}

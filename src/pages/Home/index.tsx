@@ -1,14 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import './styles.css';
 
 const Home = () => {
   return (
-    <div id="page-home">
-      <h1>Home</h1>
+    <div id="page-home">      
 
-      <Link to="/details">
-        Ir para detalhes
-      </Link>
+      <section className="pannels">
+        <div className="card"></div>
+        <div className="card"></div>
+        <div className="card"></div>
+        <div className="card"></div>
+        <div className="card"></div>
+      </section>
+      
     </div>
   );
 };
