@@ -4,15 +4,11 @@ import './styles.css';
 
 const Home = () => {
   return (
-    <div id="page-home">      
+    <div id="page-home">
 
-      <section className="pannels">
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-      </section>
+      <span className="title">covid19</span>
+      <h1>Painel <span>Coronavírus</span></h1>
+      <span>Atualizado em: 18/06/2020</span>
       
     </div>
   );
