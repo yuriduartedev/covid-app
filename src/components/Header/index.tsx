@@ -8,8 +8,8 @@ const Header = () => {
     <nav>
       <h1>CORONAVÍRUS</h1>
       <div className="links">
-        <Link to="/">Painel Geral</Link>
-        <Link to="/sobre">Sobre</Link>
+        <Link className="first after" to="/">Painel Geral</Link>
+        <Link className="first after" to="/sobre">Sobre</Link>
       </div>
     </nav>
   )

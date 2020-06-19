@@ -7,23 +7,64 @@ nav {
   padding: 10px 30px;  
   box-shadow: 0 4px 6px 0 rgba(31, 70, 88, 0.04);  
 }
-
 nav .links {
   display: flex;
   align-items: center;
   padding: 10px;
 }
+nav .links a:first-child {
+  margin-right: 20px;
+}
+
+nav .links a:last-child {
+  margin: 20px;
+}
 
 nav .links a {
-  padding: 20px;
+  padding: 3px;
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
   color: gray;
-  text-decoration: none;
+  text-decoration: none;  
 }
-
 nav h1 {
   text-transform: uppercase;
   text-decoration: none;  
+}
+a,a:visited,a:hover,a:active{
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+	position:relative;
+  transition:0.5s color ease;
+	text-decoration:none;
+	color:#81b3d2;
+}
+a:hover{
+	color:royalblue;
+}
+a.before:before,a.after:after{
+  content: "";
+  transition:0.5s all ease;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  position:absolute;
+}
+a.before:before{
+  top:-0.25em;
+}
+a.after:after{
+  bottom:-0.25em;
+}
+a.before:before,a.after:after{
+  height:5px;
+  height:0.25rem;
+  width:0;
+  background:royalblue;
+}
+a.first:after{
+  left:0;
+}
+a.before:hover:before,a.after:hover:after{
+  width:100%;
 }
