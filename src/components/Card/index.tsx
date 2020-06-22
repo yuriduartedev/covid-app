@@ -4,7 +4,7 @@ import './styles.css';
 
 interface Card {
   title: string;
-  firstResult: number;
+  firstResult: number | string;
   subTitle: string;
   secondResult: number;
   subClass?: string;
