@@ -49,7 +49,7 @@ const Home = () => {
           title={`Casos confirmados:`}
           firstResult={formatValue(Number(countriesCases.confirmed))}
           subTitle={''}
-          secondResult={123}
+
         />
 
         {/* <Card
