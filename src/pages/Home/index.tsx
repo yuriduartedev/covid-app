@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 import formatValue from '../../utils/formatValue';
+import formatDate from '../../utils/formatDate';
 import './styles.css';
 
 import PageTitle from '../../components/PageTitle';
@@ -13,7 +14,7 @@ interface Brazil {
   confirmed: number | string;
   deaths: number | string;
   recovered: number | string;
-  updated_at: string;
+  updated_at: Date | string;
 }
 
 const Home = () => {
@@ -37,13 +38,17 @@ const Home = () => {
 
   return (
     <div id="page-home">
-      <PageTitle />
+      <PageTitle
+        title='Painel'
+        subTitle='Coronavírus'
+        updated_at={countriesCases.updated_at ? formatDate(countriesCases.updated_at.toString()) : '' }
+      />
 
       <div className="cards">
         <Card
           title={`Casos confirmados:`}
           firstResult={formatValue(Number(countriesCases.confirmed))}
-          subTitle=""
+          subTitle={''}
           secondResult={123}
         />
 
