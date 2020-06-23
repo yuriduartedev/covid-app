@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
-
+import formatValue from '../../utils/formatValue';
 import './styles.css';
 
-import Title from '../../components/PageTitle';
+import PageTitle from '../../components/PageTitle';
 import Card from '../../components/Card';
 
 interface Brazil {
@@ -37,12 +37,12 @@ const Home = () => {
 
   return (
     <div id="page-home">
-      <Title />
+      <PageTitle />
 
       <div className="cards">
         <Card
           title={`Casos confirmados:`}
-          firstResult={countriesCases.confirmed}
+          firstResult={formatValue(Number(countriesCases.confirmed))}
           subTitle=""
           secondResult={123}
         />
