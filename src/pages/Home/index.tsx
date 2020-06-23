@@ -7,33 +7,23 @@ import './styles.css';
 import Title from '../../components/PageTitle';
 import Card from '../../components/Card';
 
-interface Brazil {
-  country: string;
-  cases: number | string;
-  confirmed: number | string;
-  deaths: number | string;
-  recovered: number | string;
-  updated_at: string;
+interface Cases {
+  totalCases: number;
+  recovered: number;
+  deaths: number;
+  brazilCases: number;
 }
 
 const Home = () => {
-  const [countriesCases, setCountriesCases] = useState<Brazil>({
-    country: '',
-    cases: '⌀',
-    confirmed: '⌀',
-    deaths: '⌀',
-    recovered: '⌀',
-    updated_at: ''
-  });
+
+  const [cases, setCases] = useState<Cases>()
 
   useEffect(() => {
-    api.get('countries').then((response) => {
-      const cases = response.data.data;
-
-      setCountriesCases(cases[21]);
-      console.log(cases[21]);
-    });
+    api.get('').then((response) => {
+      console.log(response);
+    })
   }, [])
+
 
   return (
     <div id="page-home">
@@ -41,10 +31,10 @@ const Home = () => {
 
       <div className="cards">
         <Card
-          title={`Casos confirmados:`}
-          firstResult={countriesCases.confirmed}
+          title={`Total de casos:`}
+          firstResult={`0`}
           subTitle=""
-          secondResult={123}
+          secondResult={0}
         />
 
         {/* <Card
