@@ -7,12 +7,13 @@
 }
 
 .cards .card {
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
   background-color: royalblue;
   border-radius: 8px;
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 30px 20px;
+  padding: 25px 20px;
   width: calc(100% - 20px);
   max-width: calc(100% - 20px);
   min-width: calc(100% - 20px);
@@ -88,7 +89,7 @@
 }
 
 #page-home .cards .card.border-blue {
-  background-color: royalblue;
+  border-bottom: 5px solid royalblue;
 }
 #page-home .cards .card.border-orange {
   border-bottom: 5px solid orangered;

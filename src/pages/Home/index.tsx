@@ -120,7 +120,7 @@ const Home = () => {
           thirdResult={formatValue(Number(usaCases.deaths))}
           fourthTitle={'♻️ Casos recuperados '}
           fourthResult={formatValue(Number(usaCases.recovered))}
-          subClass="border-violet"
+          subClass="border-blue"
         />
 
         <Card
@@ -133,7 +133,7 @@ const Home = () => {
           thirdResult={formatValue(Number(italyCases.deaths))}
           fourthTitle={'♻️ Casos recuperados '}
           fourthResult={formatValue(Number(italyCases.recovered))}
-          subClass="border-green"
+          subClass="border-blue"
         />
 
         <Card
@@ -146,7 +146,7 @@ const Home = () => {
           thirdResult={formatValue(Number(chinaCases.deaths))}
           fourthTitle={'♻️ Casos recuperados '}
           fourthResult={formatValue(Number(chinaCases.recovered))}
-          subClass="border-red"
+          subClass="border-blue"
         />
       </div>
 
