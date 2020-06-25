@@ -5,8 +5,8 @@ import formatValue from '../../utils/formatValue';
 import formatDate from '../../utils/formatDate';
 import './styles.css';
 
-import PageTitle from '../../components/PageTitle';
 import Card from '../../components/Card';
+import PageTitle from '../../components/PageTitle';
 import Footer from '../../components/Footer';
 
 interface Country {

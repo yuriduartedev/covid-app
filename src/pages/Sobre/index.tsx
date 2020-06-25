@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import './styles.css'
+
+import Footer from '../../components/Footer';
 
 const Sobre = () => {
   return (
-    <div className="page-details">
+    <div className="page-about">
+      <p>Painel com os dados atualizados do coronavírus.</p>
 
-      <h1>Sobre</h1>
-
-      <Link to="/">
-        Voltar para home
-      </Link>
+      <Footer />
     </div>
   )
 }
