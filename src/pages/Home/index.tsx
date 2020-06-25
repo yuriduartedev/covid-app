@@ -8,7 +8,7 @@ import './styles.css';
 import PageTitle from '../../components/PageTitle';
 import Card from '../../components/Card';
 
-interface Brazil {
+interface Country {
   country: string;
   cases: number | string;
   confirmed: number | string;
@@ -18,7 +18,31 @@ interface Brazil {
 }
 
 const Home = () => {
-  const [countriesCases, setCountriesCases] = useState<Brazil>({
+  const [brazilCases, setBrazilCases] = useState<Country>({
+    country: '',
+    cases: '⌀',
+    confirmed: '⌀',
+    deaths: '⌀',
+    recovered: '⌀',
+    updated_at: ''
+  });
+  const [usaCases, setUsaCases] = useState<Country>({
+    country: '',
+    cases: '⌀',
+    confirmed: '⌀',
+    deaths: '⌀',
+    recovered: '⌀',
+    updated_at: ''
+  });
+  const [italyCases, setItalyCases] = useState<Country>({
+    country: '',
+    cases: '⌀',
+    confirmed: '⌀',
+    deaths: '⌀',
+    recovered: '⌀',
+    updated_at: ''
+  });
+  const [chinaCases, setChinaCases] = useState<Country>({
     country: '',
     cases: '⌀',
     confirmed: '⌀',
@@ -28,46 +52,100 @@ const Home = () => {
   });
 
   useEffect(() => {
-    api.get('countries').then((response) => {
-      const cases = response.data.data;
+    api.get('brazil').then((response) => {
+      const brazilCases = response.data.data;
 
-      setCountriesCases(cases[21]);
-      console.log(cases[21]);
+      setBrazilCases(brazilCases);
+      console.log(brazilCases);
     });
   }, [])
 
-  console.log(formatValue(Number(countriesCases.confirmed)))
+  useEffect(() => {
+    api.get('US').then((response) => {
+      const usaCases = response.data.data;
+
+      setUsaCases(usaCases);
+      console.log(usaCases);
+    });
+  }, []);
+  useEffect(() => {
+    api.get('ITALY').then((response) => {
+      const italyCases = response.data.data;
+
+      setItalyCases(italyCases);
+      console.log(italyCases);
+    });
+  }, []);
+  useEffect(() => {
+    api.get('CHINA').then((response) => {
+      const chinaCases = response.data.data;
+
+      setChinaCases(chinaCases);
+      console.log(chinaCases);
+    });
+  }, []);
 
   return (
     <div id="page-home">
       <PageTitle
         title='Painel'
         subTitle='Coronavírus'
-        updated_at={countriesCases.updated_at ? formatDate(countriesCases.updated_at.toString()) : '' }
+        updated_at={brazilCases.updated_at
+          ? formatDate(brazilCases.updated_at.toString())
+          : ''
+        }
       />
 
       <div className="cards">
         <Card
-          title={`Casos confirmados no ${countriesCases.country ? 'Brasil' : '' }:`}
-          firstResult={formatValue(Number(countriesCases.confirmed))}
-          subTitle={'Ativos'}
-          secondResult={formatValue(Number(countriesCases.cases))}
+          title={`🇧🇷 Status no ${brazilCases.country ? 'Brasil' : '' }`}
+          label={`✅ Casos confirmados:`}
+          firstResult={formatValue(Number(brazilCases.confirmed))}
+          subTitle={'🚨 Casos ativos: '}
+          secondResult={formatValue(Number(brazilCases.cases))}
+          thirdTitle={'💀 Mortes confirmadas: '}
+          thirdResult={formatValue(Number(brazilCases.deaths))}
+          fourthTitle={'♻️ Casos recuperados '}
+          fourthResult={formatValue(Number(brazilCases.recovered))}
         />
 
         <Card
-          title={`Mortes confirmadas`}
-          firstResult={formatValue(Number(countriesCases.deaths))}
-          subTitle="Recuperados"
-          secondResult={formatValue(Number(countriesCases.recovered))}
-          subClass="border-orange"
+          title={`🇺🇸 Status em ${usaCases.country ? 'USA' : '' }`}
+          label={`✅ Casos confirmados:`}
+          firstResult={formatValue(Number(usaCases.confirmed))}
+          subTitle={'🚨 Casos ativos: '}
+          secondResult={formatValue(Number(usaCases.cases))}
+          thirdTitle={'💀 Mortes confirmadas: '}
+          thirdResult={formatValue(Number(usaCases.deaths))}
+          fourthTitle={'♻️ Casos recuperados '}
+          fourthResult={formatValue(Number(usaCases.recovered))}
+          subClass="border-violet"
         />
 
         <Card
-          title={`Casos recuperados`}
-          firstResult={formatValue(Number(countriesCases.recovered))}
-          subTitle="Recuperados"
-          secondResult={formatValue(Number(countriesCases.recovered))}
+          title={`🇮🇹 Status em ${italyCases.country ? 'italy' : '' }`}
+          label={`✅ Casos confirmados:`}
+          firstResult={formatValue(Number(italyCases.confirmed))}
+          subTitle={'🚨 Casos ativos: '}
+          secondResult={formatValue(Number(italyCases.cases))}
+          thirdTitle={'💀 Mortes confirmadas: '}
+          thirdResult={formatValue(Number(italyCases.deaths))}
+          fourthTitle={'♻️ Casos recuperados '}
+          fourthResult={formatValue(Number(italyCases.recovered))}
           subClass="border-green"
+        />
+
+        <Card
+          title={`🇨🇳 Status em ${chinaCases.country ? 'China' : '' }`}
+          label={`✅ Casos confirmados:`}
+          firstResult={formatValue(Number(chinaCases.confirmed))}
+          subTitle={'🚨 Casos ativos: '}
+          secondResult={formatValue(Number(chinaCases.cases))}
+          thirdTitle={'💀 Mortes confirmadas: '}
+          thirdResult={formatValue(Number(chinaCases.deaths))}
+          fourthTitle={'♻️ Casos recuperados '}
+          fourthResult={formatValue(Number(chinaCases.recovered))}
+          subClass="border-red"
         />
       </div>
     </div>

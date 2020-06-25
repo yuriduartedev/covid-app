@@ -1,6 +1,6 @@
 .cards {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -36,28 +36,33 @@
 }
 
 .cards .card h2 {
+  margin-bottom: 10px;
   font-weight: 400;
   opacity: .6;
   font-size: 20px;
 }
 
-.cards .card h2.title-primary {
+.cards .card h2 {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 22px;
   opacity: 1;
+}
+
+.cards .card h2.title-primary {
   color: royalblue;
 }
 
 .cards .card h2.title-secondary {
-  text-transform: uppercase;
-  font-size: 18px;
-  opacity: 1;
   color: orangered;
 }
 
 .cards .card h3 {
   opacity: .6;
   font-size: 16px;
+}
+
+#page-home span {
+  margin-bottom: 5px;
 }
 
 #page-home span.first-result {
@@ -90,5 +95,11 @@
 }
 #page-home .cards .card.border-green {
   border-bottom: 5px solid rgb(104, 196, 104);
+}
+#page-home .cards .card.border-violet {
+  border-bottom: 5px solid rgb(255, 94, 94);
+}
+#page-home .cards .card.border-red {
+  border-bottom: 5px solid red;
 }
 
