@@ -36,6 +36,8 @@ const Home = () => {
     });
   }, [])
 
+  console.log(formatValue(Number(countriesCases.confirmed)))
+
   return (
     <div id="page-home">
       <PageTitle
@@ -46,19 +48,27 @@ const Home = () => {
 
       <div className="cards">
         <Card
-          title={`Casos confirmados:`}
+          title={`Casos confirmados no ${countriesCases.country ? 'Brasil' : '' }:`}
           firstResult={formatValue(Number(countriesCases.confirmed))}
-          subTitle={''}
-
+          subTitle={'Ativos'}
+          secondResult={formatValue(Number(countriesCases.cases))}
         />
 
-        {/* <Card
-          title="Test"
-          firstResult={123}
-          subTitle="teste2"
-          secondResult={123}
-          subClass="bg-white"
-        /> */}
+        <Card
+          title={`Mortes confirmadas`}
+          firstResult={formatValue(Number(countriesCases.deaths))}
+          subTitle="Recuperados"
+          secondResult={formatValue(Number(countriesCases.recovered))}
+          subClass="border-orange"
+        />
+
+        <Card
+          title={`Casos recuperados`}
+          firstResult={formatValue(Number(countriesCases.recovered))}
+          subTitle="Recuperados"
+          secondResult={formatValue(Number(countriesCases.recovered))}
+          subClass="border-green"
+        />
       </div>
     </div>
   );

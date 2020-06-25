@@ -6,7 +6,7 @@ interface Card {
   title: string;
   firstResult: number | string;
   subTitle: string;
-  secondResult?: number;
+  secondResult?: number | string;
   subClass?: string;
 }
 

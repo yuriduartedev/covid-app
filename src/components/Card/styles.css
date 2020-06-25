@@ -16,7 +16,7 @@
   width: calc(100% - 20px);
   max-width: calc(100% - 20px);
   min-width: calc(100% - 20px);
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {
@@ -71,18 +71,24 @@
   font-weight: bold;
 }
 
-#page-home .cards .card:not(:first-child) {  
+#page-home .cards .card:not(:first-child) {
   background-color: white;
   color: black;
   border-bottom: 5px solid royalblue;
 }
 
-#page-home .cards .card:not(:first-child) span {  
+#page-home .cards .card:not(:first-child) span {
   font-size: 22px;
   margin-top: 12px;
 }
 
-#page-home .cards .card:nth-child(3){
+#page-home .cards .card.border-blue {
+  background-color: royalblue;
+}
+#page-home .cards .card.border-orange {
   border-bottom: 5px solid orangered;
+}
+#page-home .cards .card.border-green {
+  border-bottom: 5px solid rgb(104, 196, 104);
 }
 
