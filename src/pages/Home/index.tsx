@@ -7,6 +7,7 @@ import './styles.css';
 
 import PageTitle from '../../components/PageTitle';
 import Card from '../../components/Card';
+import Footer from '../../components/Footer';
 
 interface Country {
   country: string;
@@ -148,6 +149,8 @@ const Home = () => {
           subClass="border-red"
         />
       </div>
+
+      <Footer />
     </div>
   );
 };
