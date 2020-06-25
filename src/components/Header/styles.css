@@ -4,8 +4,8 @@ nav {
   align-items: center;
   height: 76px;
   background-color: white;
-  padding: 10px 30px;  
-  box-shadow: 0 4px 6px 0 rgba(31, 70, 88, 0.04);  
+  padding: 10px 30px;
+  box-shadow: 0 4px 6px 0 rgba(31, 70, 88, 0.04);
 }
 nav .links {
   display: flex;
@@ -26,11 +26,12 @@ nav .links a {
   text-align: center;
   text-transform: uppercase;
   color: gray;
-  text-decoration: none;  
+  text-decoration: none;
 }
 nav h1 {
   text-transform: uppercase;
-  text-decoration: none;  
+  text-decoration: none;
+  color: gray;
 }
 a,a:visited,a:hover,a:active{
   -webkit-backface-visibility:hidden;
