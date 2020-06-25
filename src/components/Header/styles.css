@@ -12,16 +12,13 @@ nav .links {
   align-items: center;
   padding: 10px;
 }
-nav .links a:first-child {
-  margin-right: 20px;
-}
 
 nav .links a:last-child {
-  margin: 20px;
+  margin: 8px;
 }
 
 nav .links a {
-  padding: 3px;
+  font-size: .5rem;
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
@@ -32,6 +29,7 @@ nav h1 {
   text-transform: uppercase;
   text-decoration: none;
   color: gray;
+  font-size: .8rem;
 }
 a,a:visited,a:hover,a:active{
   -webkit-backface-visibility:hidden;
@@ -68,4 +66,27 @@ a.first:after{
 }
 a.before:hover:before,a.after:hover:after{
   width:100%;
+}
+@media (min-width: 425px) {
+  nav h1 {
+    font-size: 1.2rem;
+  }
+  nav .links a {
+    font-size: .8rem;
+  }
+}
+@media (min-width: 768px) {
+  nav h1 {
+    font-size: 1.5rem;
+  }
+  nav .links a {
+    font-size: 1rem;
+    padding: 3px;
+  }
+  nav .links a:first-child {
+    margin-right: 20px;
+  }
+  nav .links a:last-child {
+    margin: 20px;
+  }
 }
